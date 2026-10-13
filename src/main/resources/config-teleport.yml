@@ -1,0 +1,65 @@
+# =====================================================================
+#  Modul: Teleport (Warps, Homes, Anfragen, Party)
+#  Warps und Homes stehen in data-teleport.yml
+# =====================================================================
+
+settings:
+  teleport-delay: 3            # Sekunden Wartezeit (0 = sofort). Bewegen bricht ab.
+  request-timeout: 60          # Sekunden, bis eine Anfrage abläuft
+  max-homes: 3                 # Standard-Limit. Mit Recht falixcore.homes.<n> gibt es n Homes.
+
+ui:
+  warp-title: "&bWarps"
+  home-title: "&aHomes"
+  warp-icon: ENDER_PEARL
+  home-icon: RED_BED
+
+messages:
+  usage: "{prefix}&cBenutzung: &f{usage}"
+  player-only: "{prefix}&cDieser Befehl ist nur für Spieler."
+  no-permission: "{prefix}&cDazu hast du keine Berechtigung."
+  player-offline: "{prefix}&cSpieler &f{player} &cist nicht online."
+  player-not-found: "{prefix}&cSpieler &f{player} &cnicht gefunden."
+  self-target: "{prefix}&cDu kannst dich nicht selbst anfragen."
+  tpa-sent: "{prefix}&7Anfrage an &f{player} &7gesendet."
+  tpa-received: "{prefix}&f{player} &7möchte sich zu dir teleportieren."
+  tphere-sent: "{prefix}&7Anfrage an &f{player} &7gesendet. Er muss sie annehmen."
+  tphere-received: "{prefix}&f{player} &7möchte dich zu sich teleportieren."
+  request-hint: "{prefix}&aTippe &f/tpaccept &aoder &c/tpdeny"
+  request-none: "{prefix}&cDu hast keine offene Anfrage."
+  request-expired: "{prefix}&cDie Anfrage ist abgelaufen."
+  request-accepted: "{prefix}&a{player} hat deine Anfrage angenommen."
+  request-denied: "{prefix}&c{player} hat deine Anfrage abgelehnt."
+  request-denied-self: "{prefix}&7Anfrage abgelehnt."
+  teleport-delay: "{prefix}&7Teleport in &f{seconds} Sek.&7. Bewege dich nicht!"
+  teleport-cancelled: "{prefix}&cTeleport abgebrochen, du hast dich bewegt."
+  teleported-to: "{prefix}&aTeleportiert zu &f{player}&a."
+  teleported-to-warp: "{prefix}&aTeleportiert zu Warp &f{name}&a."
+  teleported-home: "{prefix}&aTeleportiert zu Home &f{name}&a."
+  warp-set: "{prefix}&aWarp &f{name} &agesetzt."
+  warp-deleted: "{prefix}&eWarp &f{name} &egelöscht."
+  warp-not-found: "{prefix}&cWarp &f{name} &cexistiert nicht."
+  warp-none: "{prefix}&7Es gibt noch keine Warps."
+  home-set: "{prefix}&aHome &f{name} &agesetzt."
+  home-deleted: "{prefix}&eHome &f{name} &egelöscht."
+  home-not-found: "{prefix}&cHome &f{name} &cexistiert nicht."
+  home-none: "{prefix}&7Du hast noch kein Home. Nutze &f/sethome&7."
+  home-limit: "{prefix}&cDu hast die maximale Anzahl Homes erreicht ({max})."
+  party-self: "{prefix}&cDu kannst dich nicht selbst einladen."
+  party-invited: "{prefix}&f{player} &elädt dich in seine Party ein. Tippe &f/party accept"
+  party-invite-sent: "{prefix}&aEinladung an &f{player} &agesendet."
+  party-already: "{prefix}&c{player} ist schon in einer Party."
+  party-no-invite: "{prefix}&cDu hast keine Party-Einladung."
+  party-gone: "{prefix}&cDie Party existiert nicht mehr."
+  party-already-in: "{prefix}&cDu bist schon in einer Party. Verlasse sie zuerst mit &f/party leave&c."
+  party-joined: "{prefix}&a{player} ist der Party beigetreten."
+  party-left: "{prefix}&e{player} hat die Party verlassen."
+  party-you-left: "{prefix}&eDu hast die Party verlassen."
+  party-kicked: "{prefix}&e{player} wurde aus der Party entfernt."
+  party-you-kicked: "{prefix}&cDu wurdest aus der Party entfernt."
+  party-disbanded: "{prefix}&cDie Party wurde aufgelöst."
+  party-none: "{prefix}&7Du bist in keiner Party."
+  party-not-in: "{prefix}&7Du bist in keiner Party."
+  party-not-leader: "{prefix}&cNur der Party-Leiter kann das."
+  party-list-header: "{prefix}&eParty &8(&f{count}&8)&e, Leiter: &f{leader}"
+  party-list-entry: "&8 - &7{player}"

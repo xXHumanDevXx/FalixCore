@@ -1,0 +1,67 @@
+name: FalixCore
+version: 2.0.0
+main: de.falixcore.FalixCore
+api-version: '1.21'
+description: Alle XCraft-Funktionen in einem Plugin, jedes Modul mit eigener config
+
+commands:
+  help:
+    description: Hilfe anzeigen
+    usage: /help
+  about:
+    description: Infos über den Server
+    usage: /about
+  links:
+    description: Wichtige Links (anklickbar)
+    usage: /links
+  info:
+    description: Infoseiten anzeigen
+    usage: /info [Seite]
+  docs:
+    description: Infoseiten verwalten
+    usage: /docs <create | addline | delete | list | reload>
+    permission: falixcore.docs.admin
+  tpa:
+    description: Teleport-Anfrage senden
+    usage: /tpa <Spieler>
+  tpaccept:
+    description: Teleport-Anfrage annehmen
+    usage: /tpaccept
+  tpdeny:
+    description: Teleport-Anfrage ablehnen
+    usage: /tpdeny
+  tphere:
+    description: Spieler zu dir bitten (Anfrage)
+    usage: /tphere <Spieler>
+    permission: falixcore.admin
+  party:
+    description: Party verwalten
+    usage: /party <invite | accept | leave | kick | disband | list>
+  warp:
+    description: Warp-Menü oder Warp
+    usage: /warp [Name]
+  setwarp:
+    description: Warp setzen
+    usage: /setwarp <Name>
+    permission: falixcore.admin
+  delwarp:
+    description: Warp löschen
+    usage: /delwarp <Name>
+    permission: falixcore.admin
+  sethome:
+    description: Home setzen
+    usage: /sethome [Name]
+  home:
+    description: Home-Menü oder Home
+    usage: /home [Name]
+  delhome:
+    description: Home löschen
+    usage: /delhome <Name>
+
+permissions:
+  falixcore.admin:
+    description: Admin-Rechte im Core (Warps setzen, /tphere, unbegrenzte Homes)
+    default: op
+  falixcore.docs.admin:
+    description: Infoseiten bearbeiten und neu laden
+    default: op
