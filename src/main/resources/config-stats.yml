@@ -1,0 +1,63 @@
+# =====================================================================
+#  Modul: Stats (Sidebar, Bossbar, Tab-Menü)
+#  Platzhalter: {online} {max} {player} {world} {world-players}
+#               {ram} {clock} {time} {x} {y} {z} {ultimate}
+#  {ultimate} zeigt die Restlaufzeit des Ultimate-Abos in Tagen, sonst "-".
+#  Änderungen: /fs reload. update-ticks erst nach Neustart.
+# =====================================================================
+
+settings:
+  update-ticks: 20
+
+sidebar:
+  enabled: true
+  max-length: 28
+  title: "&b&lXCraft"
+  lines:
+    - "&7"
+    - "&8&m                    "
+    - "&7Online &a{online}&8/&a{max}"
+    - "&7Welt &b{world}"
+    - "&7RAM &d{ram}"
+    - "&7Ultimate &6{ultimate}"
+    - "&8&m                    "
+    - "&7"
+
+# Tab-Menü: Rang-Reihenfolge ist die Reihenfolge hier (oben = ganz oben in der Liste)
+# permission leer = Fallback für alle, immer ganz unten
+tab:
+  enabled: true
+  header:
+    - ""
+    - "&b&lXCRAFT"
+    - "&7Willkommen, &f{player}"
+  footer:
+    - "&7Online &a{online}&8/&a{max}"
+    - "&8XCraft"
+  groups:
+    - permission: "falixcore.rank.admin"
+      prefix: "&c&l[Admin] &c"
+    - permission: "falixcore.rank.mod"
+      prefix: "&9[Mod] &9"
+    - permission: "falixcore.rank.ultimate"
+      prefix: "&6&l[Ultimate] &6"
+    - permission: ""
+      prefix: "&7"
+
+bossbar:
+  enabled: true
+  text: "&b&lXCraft &8» &7{online} Spieler online"
+  color: BLUE
+  style: SOLID
+  progress-mode: fixed     # fixed, online oder time
+  fixed-progress: 1.0
+
+messages:
+  usage: "{prefix}&cBenutzung: &f{usage}"
+  player-only: "{prefix}&cDieser Befehl ist nur für Spieler."
+  no-permission: "{prefix}&cDazu hast du keine Berechtigung."
+  reloaded: "{prefix}&aKonfiguration neu geladen."
+  sidebar-on: "{prefix}&aDeine Seitenliste ist jetzt &fan&a."
+  sidebar-off: "{prefix}&eDeine Seitenliste ist jetzt &faus&e."
+  bossbar-on: "{prefix}&aDeine Bossbar ist jetzt &fan&a."
+  bossbar-off: "{prefix}&eDeine Bossbar ist jetzt &faus&e."

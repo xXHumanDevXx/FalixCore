@@ -1,0 +1,77 @@
+# =====================================================================
+#  Modul: Guard (Moderation und Ankündigungen)
+#  Befehle: /ban /unban /kick /mute /unmute /timeout /untimeout
+#           /warn /warnings /clearwarns /announce
+#  Dauer: 30s, 10m, 2h, 7d, 1d12h oder perm
+#  Bestrafte Daten stehen in data-guard.yml
+#  Änderungen: /docs reload (Ankündigungs-Intervall nach Neustart)
+# =====================================================================
+
+settings:
+  default-reason: "Kein Grund angegeben"
+  mute-blocked-commands:
+    - msg
+    - tell
+    - w
+    - whisper
+    - r
+    - reply
+    - me
+    - say
+    - minecraft:msg
+    - minecraft:tell
+    - minecraft:me
+    - minecraft:say
+
+# Automatische Strafen bei Verwarnungen. Platzhalter: {player} {count}
+warn:
+  actions:
+    3: "kick {player} Zu viele Verwarnungen ({count})"
+    5: "mute {player} 1h Zu viele Verwarnungen ({count})"
+    7: "timeout {player} 30m Zu viele Verwarnungen ({count})"
+    10: "ban {player} 7d Zu viele Verwarnungen ({count})"
+
+# Ankündigungen: format mit {text}. Die Liste läuft im Intervall automatisch durch.
+announce:
+  format: "&8[&6Ankündigung&8] &f{text}"
+  interval-seconds: 300        # 0 = keine automatischen Ankündigungen
+  messages:
+    - "&7Tipp: Mit &f/help &7bekommst du alle Befehle."
+    - "&7Schau bei &f/links &7vorbei!"
+
+messages:
+  usage: "{prefix}&cBenutzung: &f{usage}"
+  no-permission: "{prefix}&cDazu hast du keine Berechtigung."
+  player-offline: "{prefix}&cSpieler &f{player} &cist nicht online."
+  player-not-found: "{prefix}&cSpieler &f{player} &cwurde nicht gefunden."
+  invalid-duration: "{prefix}&cUngültige Dauer. Beispiele: &f30s 10m 2h 7d 1d12h perm"
+  not-punished: "{prefix}&f{player} &cist nicht bestraft."
+  player-exempt: "{prefix}&f{player} &cist geschützt und kann nicht bestraft werden."
+  announce-usage: "{prefix}&cBenutzung: &f/announce <Text>"
+  punish-ban: "{prefix}&f{player} &7wurde von &f{by} &cgebannt &8(&f{duration}&8) &7Grund: &f{reason}"
+  punish-unban: "{prefix}&f{player} &7wurde von &f{by} &aentbannt&7."
+  punish-mute: "{prefix}&f{player} &7wurde von &f{by} &6gemutet &8(&f{duration}&8) &7Grund: &f{reason}"
+  punish-unmute: "{prefix}&f{player} &7wurde von &f{by} &aentmutet&7."
+  punish-timeout: "{prefix}&f{player} &7wurde von &f{by} &6in Timeout geschickt &8(&f{duration}&8) &7Grund: &f{reason}"
+  punish-untimeout: "{prefix}&f{player} &7wurde von &f{by} &afreigelassen&7."
+  punish-kick: "{prefix}&f{player} &7wurde von &f{by} &egekickt&7. Grund: &f{reason}"
+  punish-warn: "{prefix}&f{player} &7wurde von &f{by} &everwarnt &8(&f{count}&8) &7Grund: &f{reason}"
+  you-muted: "{prefix}&cDu wurdest gemutet &8(&f{duration}&8)&c. Grund: &f{reason}"
+  you-timeout: "{prefix}&cDu bist im Timeout &8(&f{duration}&8)&c. Grund: &f{reason}"
+  you-warned: "{prefix}&eDu wurdest verwarnt. Grund: &f{reason} &8(&f{count}&8)"
+  mute-active: "{prefix}&cDu bist gemutet. Verbleibend: &f{duration}"
+  timeout-active: "{prefix}&cDu bist im Timeout. Verbleibend: &f{duration}"
+  warnings-header: "{prefix}&eVerwarnungen von &f{player}&e:"
+  warnings-entry: "&8 #{nr} &7{text}"
+  warnings-none: "{prefix}&f{player} &ahat keine Verwarnungen."
+  warnings-cleared: "{prefix}&aVerwarnungen von &f{player} &agelöscht."
+  ban-screen:
+    - "&c&lDu wurdest gebannt!"
+    - ""
+    - "&7Grund: &f{reason}"
+    - "&7Dauer: &f{duration}"
+    - "&7Von: &f{by}"
+  kick-screen:
+    - "&c&lDu wurdest gekickt!"
+    - ""
+    - "&7Grund: &f{reason}"
