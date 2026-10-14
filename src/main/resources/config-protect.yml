@@ -1,0 +1,29 @@
+# =====================================================================
+#  Modul: Protect (Schutzblöcke)
+#  Schutzbereiche stehen in data-protect.yml
+# =====================================================================
+
+settings:
+  item-material: BEACON        # Block des Schutzblocks
+  radius-chunks: 1             # 1 = eigener Chunk + 8 Nachbarchunks
+  owner-bypass: false          # true = Besitzer darf im eigenen Bereich abbauen
+  protect-explosions: true     # true = Explosionen zerstören keine geschützten Blöcke
+
+item:
+  name: "&6Schutzblock"
+  lore:
+    - "&7Platziere ihn, um einen Bereich"
+    - "&7vor Abbau und Explosionen zu schützen."
+
+messages:
+  protect-usage: "{prefix}&cBenutzung: &f/protection [list | reload]"
+  protect-no-permission: "{prefix}&cDazu hast du keine Berechtigung."
+  protect-received: "{prefix}&aDu hast einen &fSchutzblock &aerhalten. Platziere ihn, um einen Bereich zu schützen."
+  protect-inventory-full: "{prefix}&eDein Inventar ist voll. Der Schutzblock liegt jetzt am Boden."
+  protect-placed: "{prefix}&aSchutzbereich aktiviert. Radius: &f{radius} Chunk&a."
+  protect-removed: "{prefix}&eSchutzbereich entfernt."
+  protect-blocked: "{prefix}&cDieser Bereich ist geschützt. Hier darfst du nichts zerstören."
+  protect-reloaded: "{prefix}&aKonfiguration neu geladen."
+  protect-list-header: "{prefix}&eSchutzblöcke &8(&f{count}&8)&e:"
+  protect-list-entry: "&8 - &7{world} &f{x} {y} {z} &8(&7{owner}&8)"
+  protect-list-none: "{prefix}&7Es gibt keine Schutzblöcke."

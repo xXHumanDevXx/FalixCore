@@ -1,0 +1,56 @@
+# =====================================================================
+#  Modul: Docs (Infoseiten)
+#  Eingebaute Seiten hier bearbeiten.
+#  Eigene Seiten im Spiel: /docs create <name> <Titel>
+#                          /docs addline <name> <Text>
+#  Platzhalter: {player} {online} {max}
+# =====================================================================
+
+pages:
+  help:
+    title: "Hilfe"
+    lines:
+      - "&7Hallo &f{player}&7, hier sind die wichtigsten Befehle:"
+      - ""
+      - "&b/help &8- &7Diese Hilfe"
+      - "&b/about &8- &7Infos über den Server"
+      - "&b/links &8- &7Wichtige Links"
+      - "&b/info &8- &7Alle Infoseiten"
+      - "&b/home &8- &7Zu deinem Home"
+      - "&b/warp &8- &7Warp-Menü"
+      - "&b/tpa <Spieler> &8- &7Teleport-Anfrage"
+      - "&b/party &8- &7Party verwalten"
+  about:
+    title: "Über XCraft"
+    lines:
+      - "&7Willkommen auf &b&lXCraft&7!"
+      - ""
+      - "&7Aktuell sind &a{online}&7 von &a{max}&7 Spielern online."
+      - "&7Viel Spaß und eine gute Zeit."
+
+links:
+  title: "Links"
+  entries:
+    - name: "Discord"
+      url: "https://discord.gg/DEIN-LINK"
+      description: "Community, Support und Ankündigungen"
+    - name: "Website"
+      url: "https://deine-website.de"
+      description: "Regeln, Infos und Shop"
+    - name: "YouTube"
+      url: "https://youtube.com/@DEIN-KANAL"
+      description: "Trailer und Videos"
+
+messages:
+  usage: "{prefix}&cBenutzung: &f{usage}"
+  no-permission: "{prefix}&cDazu hast du keine Berechtigung."
+  reloaded: "{prefix}&aKonfiguration neu geladen."
+  docs-not-found: "{prefix}&cDie Seite &f{page} &cexistiert nicht. Alle Seiten: &f/info"
+  docs-usage: "{prefix}&cBenutzung: &f/docs <create <name> <Titel> | addline <name> <Text> | delete <name> | list | reload>"
+  docs-exists: "{prefix}&cDie Seite &f{page} &cexistiert schon."
+  docs-created: "{prefix}&aSeite &f{page} &aerstellt. Zeilen mit &f/docs addline {page} <Text>"
+  docs-line-added: "{prefix}&aZeile zu &f{page} &ahinzugefügt."
+  docs-deleted: "{prefix}&eSeite &f{page} &egelöscht."
+  docs-not-editable: "{prefix}&cDie Seite &f{page} &ckann hier nicht geändert werden. Eingebaute Seiten stehen in config-docs.yml."
+  docs-list-header: "{prefix}&bInfoseiten:"
+  docs-list-entry: "&8 - &b{page}"
